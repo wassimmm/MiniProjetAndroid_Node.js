@@ -9,7 +9,9 @@ const router = express.Router();
 router.route('/').get(authenticateToken,getAll).post(
     // multer,
     signUp);
+
 router.route('/signin').post(signIn);
+router.route('/signup').post(signUp);
 
 router.route('/:nom').get(authenticateToken,getOnce).put(putOnce)
 .patch(patchOnce).delete(deleteOnce);
